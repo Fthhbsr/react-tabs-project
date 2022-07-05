@@ -40,32 +40,32 @@ const App = () => {
         <h2>Experience</h2>
       </div>
       <div className="underline"></div>
-      <div className="job-center">
+      <div className="jobs-center">
         {/* btn */}
         <div className="btn-container">
           {apiData.map((item, index) => {
+            // console.log(item.id);
             return (
               <button
                 key={item.id}
                 onClick={() => setValue(index)}
                 className={`job-btn ${index === value && "active-btn"}`}
               >
-                {item.company}{" "}
+                {item.company}
               </button>
             );
           })}
         </div>
-
         {/* content */}
         <article className="job-info">
           <h3>{title}</h3>
           <h4>{company}</h4>
-          <p className="job-date">{dates} </p>
+          <p className="job-date">{dates}</p>
           {duties.map((item, index) => {
             return (
               <div className="job-desc" key={index}>
                 <FaAngleDoubleRight />
-                <p>{item} </p>
+                <p>{item}</p>
               </div>
             );
           })}
